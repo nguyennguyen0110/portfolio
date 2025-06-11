@@ -2,3 +2,28 @@ body {
     background: black;
     color: white;
 }
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    background: red;
+    height: 3em;
+    align-items: center;
+}
+
+.menu>li {
+    margin: 1em;
+}
+
+.menu>a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu>a:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    text-align: center;
+}
