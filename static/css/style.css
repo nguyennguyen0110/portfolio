@@ -15,12 +15,12 @@ body {
     margin: 1em;
 }
 
-.menu>a {
+.menu-li>a {
     text-decoration: none;
     color: white;
 }
 
-.menu>a:hover {
+.menu-li>a:hover {
     text-decoration: underline;
 }
 
