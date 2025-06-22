@@ -14,7 +14,8 @@ change the image name and version to your own need:
 - Run container with the image created, change docker port and app port to the actual port used:
     
         docker run -p 127.0.0.1:docker_port:app_port image_name:version
-
+docker build -t portfolio:v0.0.3 .
+docker run -p 127.0.0.1:8000:8080 portfolio:v0.0.3
 
 ## Support
 nguyennta@icloud.com

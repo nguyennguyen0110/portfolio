@@ -3,6 +3,35 @@ body {
     color: white;
 }
 
+footer {
+    margin: 3em 0 3em 0;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 3em;
+}
+
+p {
+    text-indent: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(120, 150, 255);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+li {
+    margin-bottom: 0.4em;
+}
+
 .menu {
     list-style-type: none;
     display: flex;
@@ -24,6 +53,14 @@ body {
     text-decoration: underline;
 }
 
-h1, h2 {
-    text-align: center;
+.about-photo {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.about-photo>img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 1em;
+  box-shadow: 0 0 3em rgba(255, 200, 100, 0.3);
 }
