@@ -14,6 +14,11 @@ def experience():
     return render_template('experience.html')
 
 
+@app.route(rule='/skill')
+def contact():
+    return render_template('skill.html')
+
+
 @app.route(rule='/education')
 def education():
     return render_template('education.html')
@@ -22,11 +27,6 @@ def education():
 @app.route(rule='/project')
 def project():
     return render_template('project.html')
-
-
-@app.route(rule='/contact')
-def contact():
-    return render_template('contact.html')
 
 
 if __name__ == '__main__':
