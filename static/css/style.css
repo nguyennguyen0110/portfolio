@@ -29,14 +29,15 @@ a:hover {
 }
 
 li {
-    margin-bottom: 0.4em;
+    margin: 0.4em;
 }
 
 .menu {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     background: red;
-    height: 3em;
+    height: auto;
     align-items: center;
 }
 

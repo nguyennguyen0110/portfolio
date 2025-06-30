@@ -14,8 +14,6 @@ change the image name and version to your own need:
 - Run container with the image created, change docker port and app port to the actual port used:
     
         docker run -p 127.0.0.1:docker_port:app_port image_name:version
-docker build -t portfolio:v0.0.3 .
-docker run -p 127.0.0.1:8000:8080 portfolio:v0.0.3
 
 ## Support
 nguyennta@icloud.com
@@ -23,10 +21,8 @@ nguyennta@icloud.com
 
 ## Contributing
 Project structure:
-- service: contain service file.
 - static: contain static file such as css, images.
 - templates: contain html file.
-- utility: contain utility file.
 - app.py: main file to run this project (Flask application is created here).
 - Dockerfile: file used to containerize this project with docker.
 - README.md: this project instruction file.
@@ -43,4 +39,6 @@ This is just a personal project for portfolio page.
 
 ## Project status
 - Working
-- Current host: local
+- Current host: https://portfolio-698202522757.asia-southeast1.run.app
+- This project’s source code is hosted on GitHub, with CI/CD handled by Cloud Build 
+and deployed via Cloud Run — both part of Google Cloud Platform (GCP).
