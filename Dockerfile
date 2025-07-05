@@ -21,4 +21,4 @@ RUN venv/bin/pip3 install -r requirements.txt
 COPY . .
 
 # The command to run when start docker image
-CMD ["venv/bin/gunicorn", "-w", "2", "-b", "0.0.0.0:8080", "-t", "120", "app:app"]
+CMD ["venv/bin/gunicorn", "-w", "1", "-b", "0.0.0.0:8080", "-t", "120", "app:app"]
