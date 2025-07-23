@@ -15,11 +15,15 @@
     <h1>Welcome to my portfolio page</h1>
     <nav>
         <ul class="menu">
-            <li class="menu-li"><a href="/">About</a></li>
-            <li class="menu-li"><a href="/experience">Experience</a></li>
-            <li class="menu-li"><a href="/skill">Skill</a></li>
-            <li class="menu-li"><a href="/education">Education</a></li>
-            <li class="menu-li"><a href="/project">Project</a></li>
+            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('experience') }}">Experience</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('education') }}">Education</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
         </ul>
     </nav>
 </header>
@@ -28,32 +32,36 @@
     <h2>Who I am</h2>
     <h3>About me:</h3>
     <p>
-        I'm Nguyen The Anh Nguyen, or Nguyen Nguyen for short. You can call me Martin. I was born
-        in 1987. I'm living in Dong Nai province, Vietnam.
+        I'm Nguyen The Anh Nguyen, or Nguyen Nguyen for short. You can call me Martin.
+        I was born in 1987. I'm living in Dong Nai province, Vietnam.
     </p>
     <p>
-        My professional journey began in the printing industry, where I worked as both a graphic
-        designer and later a production manager. Over more than a decade, I built expertise in
-        production planning, quality control, and collaborating with international partners to
-        implement new technologies. These experiences developed my attention to detail,
-        problem-solving skills, and leadership abilities.
+        My professional journey began in the printing industry, where I worked as
+        both a graphic designer and later a production manager. Over more than a
+        decade, I built expertise in production planning, quality control, and
+        collaborating with international partners to implement new technologies.
+        These experiences developed my attention to detail, problem-solving skills,
+        and leadership abilities.
     </p>
     <p>
-        After being affected by the COVID-19 pandemic, I decided to pivot toward software
-        development — a field that was growing rapidly at the time. I initially taught myself
-        programming, which sparked a deep interest in software development. I later formalized my
-        learning through a "Full Stack Java Web Developer" course at FPT Academy and a "Data Science"
-        program at Funix. Since then, I’ve worked with Python and Flask to deploy machine learning
-        models, and with Java and Spring Boot to build robust backend systems.
+        After being affected by the COVID-19 pandemic, I decided to pivot toward
+        software development — a field that was growing rapidly at the time. I
+        initially taught myself programming, which sparked a deep interest in
+        software development. I later formalized my learning through a "Full Stack
+        Java Web Developer" course at FPT Academy and a "Data Science" program at
+        Funix. Since then, I’ve worked with Python and Flask to deploy machine
+        learning models, and with Java and Spring Boot to build robust backend systems.
     </p>
     <p>
-        With hands-on experience in both industrial production and backend development, I bring a
-        unique mix of discipline, systems thinking, and technical agility.
+        With hands-on experience in both industrial production and backend
+        development, I bring a unique mix of discipline, systems thinking, and
+        technical agility.
     </p>
     <h3>Career direction:</h3>
     <p>
-        I’m currently exploring opportunities in two areas where I can make a strong impact: backend
-        development and production (engineering, planning, or management).
+        I’m currently exploring opportunities in two areas where I can make a strong
+        impact: backend development and production (engineering, planning, or
+        management).
     </p>
     <p>
         For roles in manufacturing or production, I’m especially drawn to work
@@ -63,31 +71,34 @@
         values are often reflected in Japanese work culture.
     </p>
     <p>
-        For software development roles, I’m looking for environment that values collaboration,
-        embrace best practices and clear communication, especially where modern tools (like ERP
-        systems or Jira) are in place to support the workflow.
+        For software development roles, I’m looking for environment that values
+        collaboration, embrace best practices and clear communication, especially
+        where modern tools (like ERP systems or Jira) are in place to support the
+        workflow.
     </p>
     <p>
-        Whether in software or production, I bring discipline, adaptability, and a strong drive
-        to contribute meaningfully.
+        Whether in software or production, I bring discipline, adaptability, and a
+        strong drive to contribute meaningfully.
     </p>
     <h3>Let's keep in touch!</h3>
     <p>
-        If you have an opportunity for me, an advice, or just want to add friend and have a chat, do
-        not hesitate to contact me.
+        If you have an opportunity for me, an advice, or just want to add friend and
+        have a chat, do not hesitate to contact me.
     </p>
     <ul>
         <li><b>Email:</b> nguyennta@icloud.com</li>
         <li><b>Phone:</b> (+84) 77 777 5995</li>
         <li>
             <b>LinkedIn:</b>
-            <a href="https://www.linkedin.com/in/nguyennta/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/nguyennta/"
+               target="_blank" rel="noopener noreferrer">
                 https://www.linkedin.com/in/nguyennta/
             </a>
         </li>
     </ul>
     <div class="about-photo">
-        <img src="/static/image/My_img.jpeg" alt="Photo of Nguyen Nguyen at Tri An Lake" />
+        <img src="{{ url_for('static', filename='image/My_img.jpeg') }}"
+             alt="Photo of Nguyen Nguyen at Tri An Lake" />
     </div>
 </main>
 

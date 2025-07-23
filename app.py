@@ -15,7 +15,7 @@ def experience():
 
 
 @app.route(rule='/skill')
-def contact():
+def skill():
     return render_template('skill.html')
 
 

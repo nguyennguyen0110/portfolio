@@ -15,11 +15,15 @@
     <h1>Welcome to my portfolio page</h1>
     <nav>
         <ul class="menu">
-            <li class="menu-li"><a href="/">About</a></li>
-            <li class="menu-li"><a href="/experience">Experience</a></li>
-            <li class="menu-li"><a href="/skill">Skill</a></li>
-            <li class="menu-li"><a href="/education">Education</a></li>
-            <li class="menu-li"><a href="/project">Project</a></li>
+            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('experience') }}">Experience</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('education') }}">Education</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
         </ul>
     </nav>
 </header>
@@ -29,9 +33,8 @@
     <h3>Portfolio</h3>
     <ul>
         <li>
-            <b>Description:</b>
-            This personal portfolio page, built to showcase my background,
-            skills, and projects.
+            <b>Description: </b>This personal portfolio page, built to showcase
+            my background, skills, and projects.
         </li>
         <li>
             <b>Note:</b>
@@ -42,7 +45,8 @@
             </i>
         </li>
         <li>
-            <a href="https://github.com/nguyennguyen0110/portfolio" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nguyennguyen0110/portfolio"
+               target="_blank" rel="noopener noreferrer">
                 Link to source code
             </a>
         </li>
@@ -55,19 +59,18 @@
             customers by geographic location.
         </li>
         <li>
-            <b>Note:</b>
-            <i>
-                Demo version (currently in development) — based on private
-                company project.
-            </i>
+            <b>Note: </b>
+            <i>Demo version based on private company project.</i>
         </li>
         <li>
-            <a href="https://github.com/nguyennguyen0110" target="_blank" rel="noopener noreferrer">
-                Link to source code (coming soon)
+            <a href="https://github.com/nguyennguyen0110/demo-route-optimization"
+               target="_blank" rel="noopener noreferrer">
+                Link to source code
             </a>
              |
-            <a href="https://github.com/nguyennguyen0110" target="_blank" rel="noopener noreferrer">
-                Link to demo service (coming soon)
+            <a href="https://demo-route-optimization-698202522757.asia-southeast1.run.app"
+               target="_blank" rel="noopener noreferrer">
+                Link to demo service
             </a>
         </li>
     </ul>
@@ -99,15 +102,18 @@
             </ul>
         </li>
         <li>
-            <a href="https://github.com/nguyennguyen0110/demo-price-detection" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nguyennguyen0110/demo-price-detection"
+               target="_blank" rel="noopener noreferrer">
                 Link to source code
             </a>
              |
-            <a href="https://demo-price-detection-698202522757.asia-southeast1.run.app" target="_blank" rel="noopener noreferrer">
+            <a href="https://demo-price-detection-698202522757.asia-southeast1.run.app"
+               target="_blank" rel="noopener noreferrer">
                 Link to demo service
             </a>
              |
-            <a href="https://colab.research.google.com/drive/1DrYHemCfhX8HsMcWCpc9VPQjvjKf7Vr-?usp=share_link" target="_blank" rel="noopener noreferrer">
+            <a href="https://colab.research.google.com/drive/1DrYHemCfhX8HsMcWCpc9VPQjvjKf7Vr-?usp=share_link"
+               target="_blank" rel="noopener noreferrer">
                 Link to Notebook
             </a>
         </li>
@@ -143,7 +149,8 @@
             </ul>
         </li>
         <li>
-            <a href="https://drive.google.com/drive/folders/1vy14HhHbJnpONosjeJt29K9TUZXvWKOS?usp=share_link" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/drive/folders/1vy14HhHbJnpONosjeJt29K9TUZXvWKOS?usp=share_link"
+               target="_blank" rel="noopener noreferrer">
                 Link to Google Drive
             </a>
         </li>
@@ -160,11 +167,13 @@
             <i>Demo version — based on private company project.</i>
         </li>
         <li>
-            <a href="https://github.com/nguyennguyen0110/rapid-territory-expansion" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nguyennguyen0110/rapid-territory-expansion"
+               target="_blank" rel="noopener noreferrer">
                 Link to source code
             </a>
              |
-            <a href="https://github.com/nguyennguyen0110/db-api" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nguyennguyen0110/db-api" target="_blank"
+               rel="noopener noreferrer">
                 Link to db-api source code
             </a>
         </li>
@@ -177,11 +186,13 @@
             with Jira for workflow and Bitbucket for version control.
         </li>
         <li>
-            <a href="https://bitbucket.org/nguyenvuonghoang/computercomponents/src/master/" target="_blank" rel="noopener noreferrer">
+            <a href="https://bitbucket.org/nguyenvuonghoang/computercomponents/src/master/"
+               target="_blank" rel="noopener noreferrer">
                 Link to source code
             </a>
              |
-            <a href="https://nguyenvuonghoang.atlassian.net/jira/software/projects/PC/boards/1" target="_blank" rel="noopener noreferrer">
+            <a href="https://nguyenvuonghoang.atlassian.net/jira/software/projects/PC/boards/1"
+               target="_blank" rel="noopener noreferrer">
                 Link to Jira Board
             </a>
         </li>
@@ -193,7 +204,8 @@
             FPT Academy course.
         </li>
         <li>
-            <a href="https://github.com/nguyennguyen0110/Blog" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nguyennguyen0110/Blog"
+               target="_blank" rel="noopener noreferrer">
                 Link to source code
             </a>
         </li>
@@ -202,7 +214,8 @@
     <ul>
         <li>You can find more small or experimental projects on my GitHub.</li>
         <li>
-            <a href="https://github.com/nguyennguyen0110" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/nguyennguyen0110"
+               target="_blank" rel="noopener noreferrer">
                 Link to GitHub Profile
             </a>
         </li>

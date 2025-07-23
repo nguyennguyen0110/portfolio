@@ -15,11 +15,15 @@
     <h1>Welcome to my portfolio page</h1>
     <nav>
         <ul class="menu">
-            <li class="menu-li"><a href="/">About</a></li>
-            <li class="menu-li"><a href="/experience">Experience</a></li>
-            <li class="menu-li"><a href="/skill">Skill</a></li>
-            <li class="menu-li"><a href="/education">Education</a></li>
-            <li class="menu-li"><a href="/project">Project</a></li>
+            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('experience') }}">Experience</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('education') }}">Education</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
         </ul>
     </nav>
 </header>
@@ -32,16 +36,24 @@
     <p><i>December 2024 - Present</i></p>
     <ul>
         <li>Assembled samples to approve new parts.</li>
-        <li>Tracked new product from sample through test processes to production line.</li>
+        <li>
+            Tracked new product from sample through test processes to production line.
+        </li>
         <li>Analyzed new parts issues and proposed solutions.</li>
     </ul>
     <h3>HQSoft</h3>
     <p><b>Position:</b> AI Engineer</p>
     <p><i>November 2023 - October 2024</i></p>
         <ul>
-            <li>Built API with Git, Flask / Spring Boot, Docker and AWS EC2 / Ubuntu server.</li>
+            <li>
+                Built API with Git, Flask / Spring Boot, Docker and AWS EC2 / Ubuntu
+                server.
+            </li>
             <li>Researched, implemented and fine-tuned AI models for OCR task.</li>
-            <li>Explored customer data and applied feature engineering, feature selection.</li>
+            <li>
+                Explored customer data and applied feature engineering, feature
+                selection.
+            </li>
             <li>Built classification model to classify customer.</li>
             <li>Built simple frontend interface for demo.</li>
         </ul>
@@ -56,9 +68,13 @@
     <p><b>Position:</b> Production manager</p>
     <p><i>July 2018 - April 2021</i></p>
     <ul>
-        <li>Went to China and India to meet suppliers, researched the hologram label technology.</li>
         <li>
-            Cooperated with foreign experts to study & train employees on hologram label production.
+            Went to China and India to meet suppliers, researched the hologram label
+            technology.
+        </li>
+        <li>
+            Cooperated with foreign experts to study & train employees on hologram
+            label production.
         </li>
     </ul>
     <h3>Thiet Moc Lan</h3>
@@ -68,13 +84,14 @@
         <li>Prepared proof prints and files for printing.</li>
         <li>Created and modified design files base on customer’s ideas.</li>
         <li>
-            Implemented production planning and monitored production process, ensure the production
-            schedule, arranged overtime if necessary.
+            Implemented production planning and monitored production process, ensure
+            the production schedule, arranged overtime if necessary.
         </li>
         <li>Solved business issues, organized meetings.</li>
         <li>Investigated the cause of defective goods, provided solutions to avoid.</li>
         <li>
-            Collaborated with foreign experts to learn and train employees new technology and machines.
+            Collaborated with foreign experts to learn and train employees new
+            technology and machines.
         </li>
     </ul>
 </main>

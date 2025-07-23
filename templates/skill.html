@@ -15,11 +15,15 @@
     <h1>Welcome to my portfolio page</h1>
     <nav>
         <ul class="menu">
-            <li class="menu-li"><a href="/">About</a></li>
-            <li class="menu-li"><a href="/experience">Experience</a></li>
-            <li class="menu-li"><a href="/skill">Skill</a></li>
-            <li class="menu-li"><a href="/education">Education</a></li>
-            <li class="menu-li"><a href="/project">Project</a></li>
+            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('experience') }}">Experience</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('education') }}">Education</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
         </ul>
     </nav>
 </header>
@@ -37,25 +41,39 @@
     </ul>
     <h3>Technical skill</h3>
     <ul>
-        <li><b>Languages & Frameworks:</b> <i>Python (Flask), Java (Spring Boot), SQL</i></li>
-        <li><b>Tools & Platforms:</b> <i>Git, Docker (basic), AWS EC2, Ubuntu, ERP systems, Jira</i></li>
-        <li><b>Machine learning & AI:</b> <i>OCR, Object Detection, Classification, Feature Engineering</i></li>
-        <li><b>Web Development:</b> <i>REST API, HTML, CSS, Jinja, Thymeleaf, basic JS</i></li>
+        <li>
+            <b>Languages & Frameworks:</b>
+            <i>Python (Flask), Java (Spring Boot), SQL</i>
+        </li>
+        <li>
+            <b>Tools & Platforms:</b>
+            <i>Git, Docker (basic), AWS EC2, Ubuntu, ERP systems, Jira</i>
+        </li>
+        <li>
+            <b>Machine learning & AI:</b>
+            <i>OCR, Object Detection, Classification, Feature Engineering</i>
+        </li>
+        <li>
+            <b>Web Development:</b>
+            <i>REST API, HTML, CSS, Jinja, Thymeleaf, basic JS</i>
+        </li>
         <li><b>Productivity & Production Tools:</b> <i>MS Office, ERP systems</i></li>
     </ul>
     <h3>Coding practice</h3>
     <p>
-        Although my current role is not in software development, I continue to practice coding
-        regularly in my free time.
+        Although my current role is not in software development, I continue to
+        practice coding regularly in my free time.
     </p>
     <ul>
         <li>
-            <a href="https://leetcode.com/u/nguyennta/" target="_blank" rel="noopener noreferrer">
+            <a href="https://leetcode.com/u/nguyennta/"
+               target="_blank" rel="noopener noreferrer">
                 Click for LeetCode Profile
             </a>
         </li>
         <li>
-            <a href="https://www.hackerrank.com/profile/nguyennta" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.hackerrank.com/profile/nguyennta"
+               target="_blank" rel="noopener noreferrer">
                 Click for HackerRank Profile
             </a>
         </li>
