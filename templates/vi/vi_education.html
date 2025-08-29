@@ -1,84 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Nguyen Nguyen">
-    <meta name="description" content="Portfolio page">
+    <meta name="description" content="Trang portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education</title>
+    <title>Học vấn</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 <header>
-    <h1>Welcome to my portfolio page</h1>
+    <h1>Chào mừng đến với trang portfolio của tôi</h1>
     <nav>
         <ul class="menu">
-            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
-            <li class="menu-li">
-                <a href="{{ url_for('experience') }}">Experience</a>
-            </li>
-            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
-            <li class="menu-li">
-                <a href="{{ url_for('education') }}">Education</a>
-            </li>
-            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
+            <li class="menu-li"><a href="{{ url_for('vi.about') }}">Giới thiệu</a></li>
+            <li class="menu-li"><a href="{{ url_for('vi.experience') }}">Kinh nghiệm</a></li>
+            <li class="menu-li"><a href="{{ url_for('vi.skill') }}">Kỹ năng</a></li>
+            <li class="menu-li"><a href="{{ url_for('vi.education') }}">Học vấn</a></li>
+            <li class="menu-li"><a href="{{ url_for('vi.project') }}">Dự án</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <a href="{{ url_for('vi.education') }}">Tiếng Việt</a>
-    <h2>What I've learned</h2>
-    <h3>Education</h3>
+    <a href="{{ url_for('education') }}">English</a>
+    <h2>Những gì tôi đã học</h2>
+    <h3>Học vấn</h3>
     <ul>
         <li>
-            <b>NIIT Institute</b>
+            <b>Học viện NIIT</b>
             <ul>
                 <li>Professional Diploma in Information Technology</li>
-                <li><i>November 2012 - December 2014</i></li>
-                <li><i>Grade: 3.68 / 4.00</i></li>
+                <li><i>Tháng 11/2012 - Tháng 12/2014</i></li>
+                <li><i>Điểm trung bình: 3.68 / 4.00</i></li>
                 <li>
                     <a href="{{ url_for('static', filename='image/NIIT_cer.jpeg') }}"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Certification
+                        Xem chứng chỉ
                     </a>
                      |
                     <a href="{{ url_for('static', filename='image/NIIT_transcript.jpeg') }}"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Transcript
+                        Xem bảng điểm
                     </a>
                 </li>
             </ul>
         </li>
         <li>
-            <b>Lac Hong University</b>
+            <b>Đại học Lạc Hồng</b>
             <ul>
-                <li>Bachelor in Business Administration</li>
-                <li><i>September 2005 (Incomplete)</i></li>
+                <li>Quản trị Kinh doanh</li>
+                <li><i>Tháng 9/2005 (Chưa hoàn thành)</i></li>
                 <li>
-                    Completed first year in 2006. Returned in 2008 to continue second year but left
-                    in early 2009 due to personal reasons.
+                    Hoàn thành năm thứ nhất năm 2006. Quay lại học năm 2008 để tiếp tục năm thứ hai nhưng nghỉ vào đầu năm 2009 vì lý do cá nhân.
                 </li>
             </ul>
         </li>
     </ul>
-    <h3>Certification</h3>
+
+    <h3>Chứng chỉ</h3>
     <ul>
         <li>
             <b>Data Science</b>
             <ul>
-                <li>Funix - <i>Issued March 2023</i></li>
+                <li>Funix - <i>Cấp tháng 3/2023</i></li>
                 <li>
                     <a href="{{ url_for('static', filename='image/DataScience.jpeg') }}"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Certification
+                        Xem chứng chỉ
                     </a>
                      |
                     <a href="{{ url_for('static', filename='image/Funix_transcript.jpeg') }}"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Transcript
+                        Xem bảng điểm
                     </a>
                 </li>
             </ul>
@@ -86,26 +82,25 @@
         <li>
             <b>Full Stack Java Web Developer</b>
             <ul>
-                <li>FPT Academy - <i>Issued October 2022</i></li>
+                <li>FPT Academy - <i>Cấp tháng 10/2022</i></li>
                 <li>
                     <a href="{{ url_for('static', filename='image/Java_cer.jpeg') }}"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Certification
+                        Xem chứng chỉ
                     </a>
                      |
                     <a href="{{ url_for('static', filename='image/Java_transcript.jpeg') }}"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Transcript
+                        Xem bảng điểm
                     </a>
                 </li>
             </ul>
         </li>
         <li>
-            <b>freeCodeCamp Certifications</b>
+            <b>Chứng chỉ freeCodeCamp</b>
             <ul>
                 <li>
-                    Completed 10 self-paced courses on freeCodeCamp. Key topics
-                    include:
+                    Hoàn thành 10 khóa học tự học trên freeCodeCamp. Chủ đề chính bao gồm:
                     <i>
                         Machine Learning with Python, Scientific Computing with
                         Python, Backend Development and APIs, JavaScript Algorithms
@@ -115,7 +110,7 @@
                 <li>
                     <a href="https://www.freecodecamp.org/fcc6c510874-ae08-4982-afb0-f029373039d4"
                        target="_blank" rel="noopener noreferrer">
-                        Click for freeCodeCamp Profile
+                        Xem hồ sơ freeCodeCamp
                     </a>
                 </li>
             </ul>
@@ -123,16 +118,16 @@
         <li>
             <b>Full Stack Cloud Developer</b>
             <ul>
-                <li>IBM - <i>Issued July 2021</i></li>
+                <li>IBM - <i>Cấp tháng 7/2021</i></li>
                 <li>
                     <a href="{{ url_for('static', filename='image/IBM.jpeg') }}"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Certification
+                        Xem chứng chỉ
                     </a>
                      |
                     <a href="https://www.coursera.org/user/ec88bd5e77eab4d01b46475f153a0b2a"
                        target="_blank" rel="noopener noreferrer">
-                        Click for Coursera Profile
+                        Xem hồ sơ Coursera
                     </a>
                 </li>
             </ul>

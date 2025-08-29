@@ -1,7 +1,9 @@
 from flask import Flask, render_template
+from route.vi import vi_bp
 
 
 app = Flask(__name__)
+app.register_blueprint(vi_bp, url_prefix='/vi')
 
 
 @app.route(rule='/')

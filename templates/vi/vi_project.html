@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nguyen Nguyen">
+    <meta name="description" content="Trang portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự án</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<header>
+    <h1>Chào mừng đến với trang portfolio của tôi</h1>
+    <nav>
+        <ul class="menu">
+            <li class="menu-li"><a href="{{ url_for('vi.about') }}">Giới thiệu</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('vi.experience') }}">Kinh nghiệm</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('vi.skill') }}">Kỹ năng</a></li>
+            <li class="menu-li">
+                <a href="{{ url_for('vi.education') }}">Học vấn</a>
+            </li>
+            <li class="menu-li"><a href="{{ url_for('vi.project') }}">Dự án</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <a href="{{ url_for('project') }}">English</a>
+    <h2>Dự án tôi đã làm</h2>
+    <h3>Portfolio</h3>
+    <ul>
+        <li>
+            <b>Mô tả: </b>Trang portfolio cá nhân này, được xây dựng để giới thiệu
+            nền tảng, kỹ năng và dự án của tôi.
+        </li>
+        <li>
+            <b>Lưu ý:</b>
+            <i>
+                Mã nguồn của dự án được lưu trữ trên GitHub, CI/CD sử dụng Cloud Build
+                và triển khai qua Cloud Run — đều thuộc Google Cloud Platform (GCP).
+            </i>
+        </li>
+        <li>
+            <a href="https://github.com/nguyennguyen0110/portfolio"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến mã nguồn
+            </a>
+        </li>
+    </ul>
+    <h3>Tối ưu tuyến đường</h3>
+    <ul>
+        <li>
+            <b>Mô tả:</b> Tối ưu hóa tuyến giao hàng và gợi ý tần suất ghé thăm khách hàng.
+            Đồng thời kiểm tra tính nhất quán của chuyến thăm và gom nhóm khách hàng theo khu vực địa lý.
+        </li>
+        <li>
+            <b>Lưu ý: </b>
+            <i>Phiên bản demo dựa trên dự án nội bộ công ty.</i>
+        </li>
+        <li>
+            <a href="https://github.com/nguyennguyen0110/demo-route-optimization"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến mã nguồn
+            </a>
+             |
+            <a href="https://demo-route-optimization-698202522757.asia-southeast1.run.app"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến dịch vụ demo
+            </a>
+        </li>
+    </ul>
+    <h3>Nhận diện giá</h3>
+    <ul>
+        <li>
+            <b>Mô tả:</b> Dự án OCR để trích xuất tên sản phẩm và giá bán từ hình ảnh nhãn giá.
+        </li>
+        <li>
+            <b>Lưu ý:</b>
+            <ul>
+                <li><i>Phiên bản demo — dựa trên dự án nội bộ công ty.</i></li>
+                <li>
+                    <i>
+                        Vui lòng kiên nhẫn. Dịch vụ cần chút thời gian để chạy do giới hạn tài nguyên nhằm giảm chi phí.
+                    </i>
+                </li>
+                <li>
+                    <i>
+                        Có thể tham khảo tài liệu MMOCR và Tesseract để tinh chỉnh mô hình huấn luyện sẵn của họ.
+                        Notebook bên dưới mô phỏng quá trình tinh chỉnh Tesseract 4.0 mà tôi đã thực hiện
+                        (lưu ý rằng Colab và phiên bản Tesseract đã thay đổi theo thời gian).
+                    </i>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://github.com/nguyennguyen0110/demo-price-detection"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến mã nguồn
+            </a>
+             |
+            <a href="https://demo-price-detection-698202522757.asia-southeast1.run.app"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến dịch vụ demo
+            </a>
+             |
+            <a href="https://colab.research.google.com/drive/1DrYHemCfhX8HsMcWCpc9VPQjvjKf7Vr-?usp=share_link"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến Notebook
+            </a>
+        </li>
+    </ul>
+    <h3>Nhận diện đối tượng</h3>
+    <ul>
+        <li>
+            <b>Mô tả:</b> Phát hiện sản phẩm trong hình ảnh và so sánh vị trí với planogram.
+        </li>
+        <li>
+            <b>Lưu ý:</b>
+            <ul>
+                <li><i>Phiên bản demo — dựa trên dự án nội bộ công ty.</i></li>
+                <li>
+                    <i>
+                        Notebook số 1 và số 2 là huấn luyện mô hình. Sẽ có lỗi nếu chạy vì dữ liệu đã bị xóa.
+                    </i>
+                </li>
+                <li>
+                    <i>
+                        Ngoài YOLO, tôi cũng thử TFHub EfficientDet nhưng Google Colab không đủ mạnh để huấn luyện.
+                    </i>
+                </li>
+                <li>
+                    <i>
+                        Để xem tốt hơn, nên tải thư mục, upload lên Google Drive cá nhân
+                        và mở file ipynb bằng Google Colab.
+                    </i>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/1vy14HhHbJnpONosjeJt29K9TUZXvWKOS?usp=share_link"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến Google Drive
+            </a>
+        </li>
+    </ul>
+    <h3>Mở rộng lãnh thổ nhanh</h3>
+    <ul>
+        <li>
+            <b>Mô tả:</b> Dự án Java để hợp nhất thông tin khách hàng từ nhiều nguồn
+            và đồng bộ dữ liệu định kỳ. Một API viết bằng Python (db-api) giả lập nguồn dữ liệu.
+        </li>
+        <li>
+            <b>Lưu ý:</b>
+            <i>Phiên bản demo — dựa trên dự án nội bộ công ty.</i>
+        </li>
+        <li>
+            <a href="https://github.com/nguyennguyen0110/rapid-territory-expansion"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến mã nguồn
+            </a>
+             |
+            <a href="https://github.com/nguyennguyen0110/db-api" target="_blank"
+               rel="noopener noreferrer">
+                Liên kết đến mã nguồn db-api
+            </a>
+        </li>
+    </ul>
+    <h3>Linh kiện máy tính</h3>
+    <ul>
+        <li>
+            <b>Mô tả:</b> Backend Java full-stack cho website thương mại điện tử bán linh kiện PC.
+            Được xây dựng theo nhóm trong khóa học tại FPT Academy, sử dụng Jira để quản lý công việc và Bitbucket để quản lý mã nguồn.
+        </li>
+        <li>
+            <a href="https://bitbucket.org/nguyenvuonghoang/computercomponents/src/master/"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến mã nguồn
+            </a>
+             |
+            <a href="https://nguyenvuonghoang.atlassian.net/jira/software/projects/PC/boards/1"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến Jira Board
+            </a>
+        </li>
+        <li>
+            Cần có quyền truy cập. Hãy liên hệ với tôi nếu bạn muốn xem.
+        </li>
+    </ul>
+    <h3>Blog</h3>
+    <ul>
+        <li>
+            <b>Mô tả:</b> Backend blog viết bằng Java, được tạo trong khóa học FPT Academy.
+        </li>
+        <li>
+            <a href="https://github.com/nguyennguyen0110/Blog"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến mã nguồn
+            </a>
+        </li>
+    </ul>
+    <h3>Dự án khác</h3>
+    <ul>
+        <li>Bạn có thể tìm thêm các dự án nhỏ hoặc thử nghiệm khác trên GitHub của tôi.</li>
+        <li>
+            <a href="https://github.com/nguyennguyen0110"
+               target="_blank" rel="noopener noreferrer">
+                Liên kết đến GitHub Profile
+            </a>
+        </li>
+    </ul>
+</main>
+
+<footer>
+    <hr>
+    <p>Tác giả: Nguyen Nguyen</p>
+    <p>nguyennta@icloud.com</p>
+    <p>(+84) 77 777 5995</p>
+</footer>
+</body>
+
+</html>

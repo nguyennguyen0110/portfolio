@@ -22,6 +22,7 @@ nguyennta@icloud.com
 
 ## Contributing
 Project structure:
+- route: contain file for routing.
 - static: contain static file such as css, images.
 - templates: contain html file.
 - app.py: main file to run this project (Flask application is created here).
