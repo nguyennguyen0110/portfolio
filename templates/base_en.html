@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nguyen Nguyen">
+    <meta name="description" content="Portfolio page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Nguyen's Portfolio{% endblock %}</title>
+    <script>
+        (function() {
+            const t = localStorage.getItem("theme");
+            if (t === "dark") {
+                document.documentElement.classList.add("dark-mode");
+            }
+        })();
+    </script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to my portfolio page</h1>
+
+    <nav>
+        <ul class="menu">
+            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="menu-li"><a href="{{ url_for('experience') }}">Experience</a></li>
+            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
+            <li class="menu-li"><a href="{{ url_for('education') }}">Education</a></li>
+            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
+        </ul>
+    </nav>
+
+    <div style="clear: both;"></div>
+
+    <div style="display:flex; gap:10px;">
+        <button id="theme-toggle">Switch dark</button>
+        <button onclick="switchLanguage()">Tiếng Việt</button>
+    </div>
+
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <hr>
+    <p>by: Nguyen Nguyen</p>
+    <p>nguyennta@icloud.com</p>
+    <p>(+84) 77 777 5995</p>
+</footer>
+
+
+<!-- =============================== -->
+<!-- Theme toggle + language switch -->
+<!-- =============================== -->
+<script>
+    const themeBtn = document.getElementById("theme-toggle");
+
+    // Update text
+    function updateButtonText() {
+        themeBtn.textContent = document.documentElement.classList.contains("dark-mode")
+            ? "Switch light"
+            : "Switch dark";
+    }
+
+    // Load theme
+    document.addEventListener("DOMContentLoaded", () => {
+        updateButtonText();
+    });
+
+    // Toggle theme
+    themeBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark-mode");
+        const isDark = document.documentElement.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateButtonText();
+    });
+
+    // Switch language
+    function switchLanguage() {
+        const current = window.location.pathname;
+        if (current.startsWith("/vi")) {
+            window.location.pathname = current.replace("/vi", "") || "/";
+        } else {
+            window.location.pathname = "/vi" + current;
+        }
+    }
+</script>
+
+</body>
+</html>

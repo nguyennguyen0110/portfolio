@@ -1,151 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base_en.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Nguyen Nguyen">
-    <meta name="description" content="Portfolio page">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% block title %}Nguyen's Education{% endblock %}
 
-<body>
-<header>
-    <h1>Welcome to my portfolio page</h1>
-    <nav>
-        <ul class="menu">
-            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
-            <li class="menu-li">
-                <a href="{{ url_for('experience') }}">Experience</a>
+{% block content %}
+
+<h2>What I've learned</h2>
+<h3>Education</h3>
+<ul>
+    <li>
+        <b>NIIT Institute</b>
+        <ul>
+            <li>Professional Diploma in Information Technology</li>
+            <li><i>November 2012 - December 2014</i></li>
+            <li><i>Grade: 3.68 / 4.00</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/NIIT_cer.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Certification
+                </a>
+                |
+                <a href="{{ url_for('static', filename='image/NIIT_transcript.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Transcript
+                </a>
             </li>
-            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
-            <li class="menu-li">
-                <a href="{{ url_for('education') }}">Education</a>
-            </li>
-            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
         </ul>
-    </nav>
-</header>
+    </li>
+    <li>
+        <b>Lac Hong University</b>
+        <ul>
+            <li>Bachelor in Business Administration</li>
+            <li><i>September 2005 (Incomplete)</i></li>
+            <li>
+                Completed first year in 2006. Returned in 2008 to continue second year but left
+                in early 2009 due to personal reasons.
+            </li>
+        </ul>
+    </li>
+</ul>
+<h3>Certification</h3>
+<ul>
+    <li>
+        <b>Data Science</b>
+        <ul>
+            <li>Funix - <i>Issued March 2023</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/DataScience.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Certification
+                </a>
+                |
+                <a href="{{ url_for('static', filename='image/Funix_transcript.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Transcript
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Full Stack Java Web Developer</b>
+        <ul>
+            <li>FPT Academy - <i>Issued October 2022</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/Java_cer.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Certification
+                </a>
+                |
+                <a href="{{ url_for('static', filename='image/Java_transcript.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Transcript
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>freeCodeCamp Certifications</b>
+        <ul>
+            <li>
+                Completed 10 self-paced courses on freeCodeCamp. Key topics
+                include:
+                <i>
+                    Machine Learning with Python, Scientific Computing with
+                    Python, Backend Development and APIs, JavaScript Algorithms
+                    and Data Structures, ...
+                </i>
+            </li>
+            <li>
+                <a href="https://www.freecodecamp.org/fcc6c510874-ae08-4982-afb0-f029373039d4"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for freeCodeCamp Profile
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Full Stack Cloud Developer</b>
+        <ul>
+            <li>IBM - <i>Issued July 2021</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/IBM.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Certification
+                </a>
+                |
+                <a href="https://www.coursera.org/user/ec88bd5e77eab4d01b46475f153a0b2a"
+                   target="_blank" rel="noopener noreferrer">
+                    Click for Coursera Profile
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
 
-<main>
-    <a href="{{ url_for('vi.education') }}">Tiếng Việt</a>
-    <h2>What I've learned</h2>
-    <h3>Education</h3>
-    <ul>
-        <li>
-            <b>NIIT Institute</b>
-            <ul>
-                <li>Professional Diploma in Information Technology</li>
-                <li><i>November 2012 - December 2014</i></li>
-                <li><i>Grade: 3.68 / 4.00</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/NIIT_cer.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Certification
-                    </a>
-                     |
-                    <a href="{{ url_for('static', filename='image/NIIT_transcript.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Transcript
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>Lac Hong University</b>
-            <ul>
-                <li>Bachelor in Business Administration</li>
-                <li><i>September 2005 (Incomplete)</i></li>
-                <li>
-                    Completed first year in 2006. Returned in 2008 to continue second year but left
-                    in early 2009 due to personal reasons.
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <h3>Certification</h3>
-    <ul>
-        <li>
-            <b>Data Science</b>
-            <ul>
-                <li>Funix - <i>Issued March 2023</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/DataScience.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Certification
-                    </a>
-                     |
-                    <a href="{{ url_for('static', filename='image/Funix_transcript.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Transcript
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>Full Stack Java Web Developer</b>
-            <ul>
-                <li>FPT Academy - <i>Issued October 2022</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/Java_cer.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Certification
-                    </a>
-                     |
-                    <a href="{{ url_for('static', filename='image/Java_transcript.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Transcript
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>freeCodeCamp Certifications</b>
-            <ul>
-                <li>
-                    Completed 10 self-paced courses on freeCodeCamp. Key topics
-                    include:
-                    <i>
-                        Machine Learning with Python, Scientific Computing with
-                        Python, Backend Development and APIs, JavaScript Algorithms
-                        and Data Structures, ...
-                    </i>
-                </li>
-                <li>
-                    <a href="https://www.freecodecamp.org/fcc6c510874-ae08-4982-afb0-f029373039d4"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for freeCodeCamp Profile
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>Full Stack Cloud Developer</b>
-            <ul>
-                <li>IBM - <i>Issued July 2021</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/IBM.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Certification
-                    </a>
-                     |
-                    <a href="https://www.coursera.org/user/ec88bd5e77eab4d01b46475f153a0b2a"
-                       target="_blank" rel="noopener noreferrer">
-                        Click for Coursera Profile
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</main>
-
-<footer>
-    <hr>
-    <p>by: Nguyen Nguyen</p>
-    <p>nguyennta@icloud.com</p>
-    <p>(+84) 77 777 5995</p>
-</footer>
-</body>
-
-</html>
+{% endblock %}

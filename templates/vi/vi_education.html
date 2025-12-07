@@ -1,146 +1,116 @@
-<!DOCTYPE html>
-<html lang="vi">
+{% extends "vi/base_vi.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Nguyen Nguyen">
-    <meta name="description" content="Trang portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Học vấn</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% block title %}Học vấn của Nguyên{% endblock %}
 
-<body>
-<header>
-    <h1>Chào mừng đến với trang portfolio của tôi</h1>
-    <nav>
-        <ul class="menu">
-            <li class="menu-li"><a href="{{ url_for('vi.about') }}">Giới thiệu</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.experience') }}">Kinh nghiệm</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.skill') }}">Kỹ năng</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.education') }}">Học vấn</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.project') }}">Dự án</a></li>
+{% block content %}
+
+<h2>Những gì tôi đã học</h2>
+<h3>Học vấn</h3>
+<ul>
+    <li>
+        <b>Học viện NIIT</b>
+        <ul>
+            <li>Professional Diploma in Information Technology</li>
+            <li><i>Tháng 11/2012 - Tháng 12/2014</i></li>
+            <li><i>Điểm trung bình: 3.68 / 4.00</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/NIIT_cer.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem chứng chỉ
+                </a>
+                |
+                <a href="{{ url_for('static', filename='image/NIIT_transcript.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem bảng điểm
+                </a>
+            </li>
         </ul>
-    </nav>
-</header>
+    </li>
+    <li>
+        <b>Đại học Lạc Hồng</b>
+        <ul>
+            <li>Quản trị Kinh doanh</li>
+            <li><i>Tháng 9/2005 (Chưa hoàn thành)</i></li>
+            <li>
+                Hoàn thành năm thứ nhất năm 2006. Quay lại học năm 2008 để tiếp tục năm thứ hai nhưng nghỉ vào đầu năm
+                2009 vì lý do cá nhân.
+            </li>
+        </ul>
+    </li>
+</ul>
 
-<main>
-    <a href="{{ url_for('education') }}">English</a>
-    <h2>Những gì tôi đã học</h2>
-    <h3>Học vấn</h3>
-    <ul>
-        <li>
-            <b>Học viện NIIT</b>
-            <ul>
-                <li>Professional Diploma in Information Technology</li>
-                <li><i>Tháng 11/2012 - Tháng 12/2014</i></li>
-                <li><i>Điểm trung bình: 3.68 / 4.00</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/NIIT_cer.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem chứng chỉ
-                    </a>
-                     |
-                    <a href="{{ url_for('static', filename='image/NIIT_transcript.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem bảng điểm
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>Đại học Lạc Hồng</b>
-            <ul>
-                <li>Quản trị Kinh doanh</li>
-                <li><i>Tháng 9/2005 (Chưa hoàn thành)</i></li>
-                <li>
-                    Hoàn thành năm thứ nhất năm 2006. Quay lại học năm 2008 để tiếp tục năm thứ hai nhưng nghỉ vào đầu năm 2009 vì lý do cá nhân.
-                </li>
-            </ul>
-        </li>
-    </ul>
+<h3>Chứng chỉ</h3>
+<ul>
+    <li>
+        <b>Data Science</b>
+        <ul>
+            <li>Funix - <i>Cấp tháng 3/2023</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/DataScience.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem chứng chỉ
+                </a>
+                |
+                <a href="{{ url_for('static', filename='image/Funix_transcript.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem bảng điểm
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Full Stack Java Web Developer</b>
+        <ul>
+            <li>FPT Academy - <i>Cấp tháng 10/2022</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/Java_cer.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem chứng chỉ
+                </a>
+                |
+                <a href="{{ url_for('static', filename='image/Java_transcript.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem bảng điểm
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Chứng chỉ freeCodeCamp</b>
+        <ul>
+            <li>
+                Hoàn thành 10 khóa học tự học trên freeCodeCamp. Chủ đề chính bao gồm:
+                <i>
+                    Machine Learning with Python, Scientific Computing with
+                    Python, Backend Development and APIs, JavaScript Algorithms
+                    and Data Structures, ...
+                </i>
+            </li>
+            <li>
+                <a href="https://www.freecodecamp.org/fcc6c510874-ae08-4982-afb0-f029373039d4"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem hồ sơ freeCodeCamp
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <b>Full Stack Cloud Developer</b>
+        <ul>
+            <li>IBM - <i>Cấp tháng 7/2021</i></li>
+            <li>
+                <a href="{{ url_for('static', filename='image/IBM.jpeg') }}"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem chứng chỉ
+                </a>
+                |
+                <a href="https://www.coursera.org/user/ec88bd5e77eab4d01b46475f153a0b2a"
+                   target="_blank" rel="noopener noreferrer">
+                    Xem hồ sơ Coursera
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
 
-    <h3>Chứng chỉ</h3>
-    <ul>
-        <li>
-            <b>Data Science</b>
-            <ul>
-                <li>Funix - <i>Cấp tháng 3/2023</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/DataScience.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem chứng chỉ
-                    </a>
-                     |
-                    <a href="{{ url_for('static', filename='image/Funix_transcript.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem bảng điểm
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>Full Stack Java Web Developer</b>
-            <ul>
-                <li>FPT Academy - <i>Cấp tháng 10/2022</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/Java_cer.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem chứng chỉ
-                    </a>
-                     |
-                    <a href="{{ url_for('static', filename='image/Java_transcript.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem bảng điểm
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>Chứng chỉ freeCodeCamp</b>
-            <ul>
-                <li>
-                    Hoàn thành 10 khóa học tự học trên freeCodeCamp. Chủ đề chính bao gồm:
-                    <i>
-                        Machine Learning with Python, Scientific Computing with
-                        Python, Backend Development and APIs, JavaScript Algorithms
-                        and Data Structures, ...
-                    </i>
-                </li>
-                <li>
-                    <a href="https://www.freecodecamp.org/fcc6c510874-ae08-4982-afb0-f029373039d4"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem hồ sơ freeCodeCamp
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <b>Full Stack Cloud Developer</b>
-            <ul>
-                <li>IBM - <i>Cấp tháng 7/2021</i></li>
-                <li>
-                    <a href="{{ url_for('static', filename='image/IBM.jpeg') }}"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem chứng chỉ
-                    </a>
-                     |
-                    <a href="https://www.coursera.org/user/ec88bd5e77eab4d01b46475f153a0b2a"
-                       target="_blank" rel="noopener noreferrer">
-                        Xem hồ sơ Coursera
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</main>
-
-<footer>
-    <hr>
-    <p>by: Nguyen Nguyen</p>
-    <p>nguyennta@icloud.com</p>
-    <p>(+84) 77 777 5995</p>
-</footer>
-</body>
-
-</html>
+{% endblock %}

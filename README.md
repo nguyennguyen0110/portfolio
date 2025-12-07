@@ -13,7 +13,7 @@ change the image name and version to your own need:
         docker build -t image_name:version .
 - Run container with the image created, change docker port and app port to the actual port used:
     
-        docker run -p 127.0.0.1:docker_port:app_port image_name:version
+        docker run -p docker_port:app_port image_name:version
 
 
 ## Support

@@ -1,96 +1,65 @@
-<!DOCTYPE html>
-<html lang="vi">
+{% extends "vi/base_vi.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Nguyen Nguyen">
-    <meta name="description" content="Trang portfolio">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kỹ năng</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
+{% block title %}Kỹ năng của Nguyên{% endblock %}
 
-<body>
-<header>
-    <h1>Chào mừng đến với trang portfolio của tôi</h1>
-    <nav>
-        <ul class="menu">
-            <li class="menu-li"><a href="{{ url_for('vi.about') }}">Giới thiệu</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.experience') }}">Kinh nghiệm</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.skill') }}">Kỹ năng</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.education') }}">Học vấn</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.project') }}">Dự án</a></li>
-        </ul>
-    </nav>
-</header>
+{% block content %}
 
-<main>
-    <a href="{{ url_for('skill') }}">English</a>
-    <h2>Kỹ năng tôi có</h2>
-    <h3>Kỹ năng mềm</h3>
-    <ul>
-        <li>Quản lý sản xuất, lập kế hoạch & điều độ</li>
-        <li>Lãnh đạo & phối hợp nhóm</li>
-        <li>Giải quyết vấn đề & phân tích nguyên nhân gốc rễ</li>
-        <li>Tự học, nghiên cứu & thích ứng</li>
-        <li>Phối hợp & giao tiếp liên phòng ban</li>
-        <li>Ngôn ngữ: Tiếng Anh (Nâng cao), Tiếng Nhật (Sơ cấp)</li>
-    </ul>
+<h2>Kỹ năng tôi có</h2>
+<h3>Kỹ năng mềm</h3>
+<ul>
+    <li>Quản lý sản xuất, lập kế hoạch & điều độ</li>
+    <li>Lãnh đạo & phối hợp nhóm</li>
+    <li>Giải quyết vấn đề & phân tích nguyên nhân gốc rễ</li>
+    <li>Tự học, nghiên cứu & thích ứng</li>
+    <li>Phối hợp & giao tiếp liên phòng ban</li>
+    <li>Ngôn ngữ: Tiếng Anh (Nâng cao), Tiếng Nhật (Sơ cấp)</li>
+</ul>
 
-    <h3>Kỹ năng chuyên môn</h3>
-    <ul>
-        <li>
-            <b>Ngôn ngữ & Frameworks:</b> Python (Flask) - <i>Trung cấp/Nâng cao</i>;
-            Java (Spring Boot), SQL - <i>Trung cấp</i>
-        </li>
-        <li>
-            <b>Công cụ & Nền tảng:</b> Git, GCP, Ubuntu - <i>Trung cấp</i>; Docker,
-            AWS EC2, Jira - <i>Cơ bản</i>
-        </li>
-        <li>
-            <b>Machine learning & AI:</b> OCR, Object Detection, Classification -
-            <i>Trung cấp</i>; Feature Engineering - <i>Cơ bản</i>
-        </li>
-        <li>
-            <b>Phát triển Web:</b> REST API, HTML, CSS, Jinja - <i>Trung cấp</i>;
-            Thymeleaf, JS - <i>Cơ bản</i>
-        </li>
-    </ul>
+<h3>Kỹ năng chuyên môn</h3>
+<ul>
+    <li>
+        <b>Ngôn ngữ & Frameworks:</b> Python (Flask) - <i>Trung cấp/Nâng cao</i>;
+        Java (Spring Boot), SQL - <i>Trung cấp</i>
+    </li>
+    <li>
+        <b>Công cụ & Nền tảng:</b> Git, GCP, Ubuntu - <i>Trung cấp</i>; Docker,
+        AWS EC2, Jira - <i>Cơ bản</i>
+    </li>
+    <li>
+        <b>Machine learning & AI:</b> OCR, Object Detection, Classification -
+        <i>Trung cấp</i>; Feature Engineering - <i>Cơ bản</i>
+    </li>
+    <li>
+        <b>Phát triển Web:</b> REST API, HTML, CSS, Jinja - <i>Trung cấp</i>;
+        Thymeleaf, JS - <i>Cơ bản</i>
+    </li>
+</ul>
 
-    <h3>Công cụ sản xuất:</h3>
-    <ul>
-        <li>MS Office - <i>Trung cấp/Nâng cao</i></li>
-        <li>Hệ thống ERP - <i>Trung cấp</i></li>
-    </ul>
+<h3>Công cụ sản xuất:</h3>
+<ul>
+    <li>MS Office - <i>Trung cấp/Nâng cao</i></li>
+    <li>Hệ thống ERP - <i>Trung cấp</i></li>
+</ul>
 
-    <h3>Luyện tập lập trình</h3>
-    <p>
-        Mặc dù công việc hiện tại của tôi không thuộc lĩnh vực phát triển phần mềm,
-        tôi vẫn chủ động duy trì và nâng cao kỹ năng lập trình thông qua việc luyện
-        tập thường xuyên.
-    </p>
-    <ul>
-        <li>
-            <a href="https://leetcode.com/u/nguyennta/"
-               target="_blank" rel="noopener noreferrer">
-                Xem hồ sơ LeetCode
-            </a>
-        </li>
-        <li>
-            <a href="https://www.hackerrank.com/profile/nguyennta"
-               target="_blank" rel="noopener noreferrer">
-                Xem hồ sơ HackerRank
-            </a>
-        </li>
-    </ul>
-</main>
+<h3>Luyện tập lập trình</h3>
+<p>
+    Mặc dù công việc hiện tại của tôi không thuộc lĩnh vực phát triển phần mềm,
+    tôi vẫn chủ động duy trì và nâng cao kỹ năng lập trình thông qua việc luyện
+    tập thường xuyên.
+</p>
+<ul>
+    <li>
+        <a href="https://leetcode.com/u/nguyennta/"
+           target="_blank" rel="noopener noreferrer">
+            Xem hồ sơ LeetCode
+        </a>
+    </li>
+    <li>
+        <a href="https://www.hackerrank.com/profile/nguyennta"
+           target="_blank" rel="noopener noreferrer">
+            Xem hồ sơ HackerRank
+        </a>
+    </li>
+</ul>
 
-<footer>
-    <hr>
-    <p>by: Nguyen Nguyen</p>
-    <p>nguyennta@icloud.com</p>
-    <p>(+84) 77 777 5995</p>
-</footer>
-</body>
-
-</html>
+{% endblock %}

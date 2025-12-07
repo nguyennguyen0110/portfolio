@@ -3,7 +3,7 @@ from flask import Blueprint, render_template
 vi_bp = Blueprint('vi', __name__)
 
 
-@vi_bp.route(rule='')
+@vi_bp.route(rule='/')
 def about():
     return render_template('vi/vi_index.html')
 
