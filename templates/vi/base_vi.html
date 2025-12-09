@@ -8,15 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block title %}Portfolio của Nguyên{% endblock %}</title>
-    <script>
-        (function() {
-            const t = localStorage.getItem("theme");
-            if (t === "dark") {
-                document.documentElement.classList.add("dark-mode");
-            }
-        })();
-    </script>
 
+    <!-- Shared JS: theme + language logic -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -37,9 +31,26 @@
 
     <div style="clear: both;"></div>
 
-    <div style="display:flex; gap:10px;">
-        <button id="theme-toggle">Chuyển tối</button>
-        <button onclick="switchLanguage()">English</button>
+    <div class="preferences-bar">
+        <!-- Theme selector -->
+        <div class="preferences-left">
+            <label for="theme-select">Chế độ hiển thị:</label>
+            <select id="theme-select">
+                <option value="system">Theo hệ thống</option>
+                <option value="light">Sáng</option>
+                <option value="dark">Tối</option>
+            </select>
+        </div>
+
+        <!-- Language selector with rotating label -->
+        <div class="preferences-right">
+            <label id="language-label" for="language-select">🌐 Ngôn ngữ</label>
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="vi">Tiếng Việt</option>
+                <!-- Future: <option value="ja">日本語</option> -->
+            </select>
+        </div>
     </div>
 
 </header>
@@ -55,44 +66,6 @@
     <p>nguyennta@icloud.com</p>
     <p>(+84) 77 777 5995</p>
 </footer>
-
-
-<!-- =============================== -->
-<!-- Theme toggle + language switch -->
-<!-- =============================== -->
-<script>
-    const themeBtn = document.getElementById("theme-toggle");
-
-    // Update text
-    function updateButtonText() {
-        themeBtn.textContent = document.documentElement.classList.contains("dark-mode")
-            ? "Chuyển sáng"
-            : "Chuyển tối";
-    }
-
-    // Load theme
-    document.addEventListener("DOMContentLoaded", () => {
-        updateButtonText();
-    });
-
-    // Toggle theme
-    themeBtn.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark-mode");
-        const isDark = document.documentElement.classList.contains("dark-mode");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-        updateButtonText();
-    });
-
-    // Switch language
-    function switchLanguage() {
-        const current = window.location.pathname;
-        if (current.startsWith("/vi")) {
-            window.location.pathname = current.replace("/vi", "") || "/";
-        } else {
-            window.location.pathname = "/vi" + current;
-        }
-    }
-</script>
 
 </body>
 </html>

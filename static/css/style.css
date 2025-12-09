@@ -65,3 +65,28 @@ li {
   border-radius: 1em;
   box-shadow: 0 0 3em rgba(255, 200, 100, 0.3);
 }
+
+.preferences-bar {
+    display: flex;
+    justify-content: space-between; /* Theme left, Language right */
+    align-items: center;
+    margin-top: 1.5rem;             /* relative unit instead of px */
+    width: 100%;
+    padding: 0 1.5rem;   /* add horizontal space from screen edge */
+    box-sizing: border-box;
+}
+
+/* Optional: spacing between label and select */
+.preferences-left,
+.preferences-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;                    /* relative-ish feel (depends on root font size) */
+}
+
+/* Fixed width for language label so text changes don't shift layout */
+#language-label {
+    display: inline-block;
+    width: 6rem;                    /* adjust as needed */
+    white-space: nowrap;            /* prevent wrapping */
+}
