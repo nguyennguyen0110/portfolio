@@ -1,0 +1,19 @@
+{# Shared <head> scripts/styles for every page (EN + VI).
+   The inline snippet must stay inline: it applies the saved theme BEFORE the
+   first paint to avoid a light → dark flash. A deferred external file would run
+   too late; a blocking external file would hurt performance. Everything else
+   lives in the shared static/js/main.js. #}
+<script>
+    (function () {
+        try {
+            var m = localStorage.getItem("theme") || "system";
+            var dark = m === "dark" || (m === "system" && window.matchMedia
+                && window.matchMedia("(prefers-color-scheme: dark)").matches);
+            if (dark) document.documentElement.classList.add("dark-mode");
+        } catch (e) {}
+    })();
+</script>
+
+<!-- Shared JS: theme + language logic (deferred, non-blocking). -->
+<script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">

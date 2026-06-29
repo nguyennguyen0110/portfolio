@@ -1,24 +1,17 @@
-# Use a smaller base image with Python pre-installed
-FROM python:3.12.3-slim
-
-# Set working directory inside the container
+# --- Stage 1: render Jinja templates to static HTML ---
+FROM python:3.12.3-slim AS builder
 WORKDIR /app
 
-# Expose port
-EXPOSE 8080
-
-# Create virtual environment
-RUN python -m venv venv
-
-# Ensure pip is up to date in the venv
-RUN venv/bin/pip install --upgrade pip
-
-# Copy requirements and install them inside the venv
 COPY requirements.txt .
-RUN venv/bin/pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all application files
 COPY . .
+RUN python build_static.py
 
-# Start the application using gunicorn inside the venv
-CMD ["venv/bin/gunicorn", "-w", "1", "-b", "0.0.0.0:8080", "-t", "120", "app:app"]
+# --- Stage 2: serve the static site with nginx ---
+FROM nginx:1.27-alpine
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
