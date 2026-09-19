@@ -15,5 +15,6 @@
 </script>
 
 <!-- Shared JS: theme + language logic (deferred, non-blocking). -->
-<script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{# ?h= changes with the file, so browsers drop their cached copy on update. #}
+<script defer src="/js/main.js?h={{ get_hash(path='js/main.js', sha_type=256, base64=false) | truncate(length=8, end='') }}"></script>
+<link rel="stylesheet" href="/css/style.css?h={{ get_hash(path='css/style.css', sha_type=256, base64=false) | truncate(length=8, end='') }}">

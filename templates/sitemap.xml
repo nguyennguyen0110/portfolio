@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+{#- Firebase serves clean URLs without the trailing slash Zola adds. #}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {%- for entry in entries %}
+    {%- set len = entry.permalink | length %}
+    <url><loc>{{ entry.permalink | truncate(length=len - 1, end="") | safe }}</loc></url>
+    {%- endfor %}
+</urlset>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Nguyen Nguyen">
-    <meta name="description" content="Trang portfolio">
+    <meta name="description" content="Nguyên Nguyễn — kỹ sư phần mềm tại Đồng Nai, Việt Nam. Phát triển backend và full-stack với Rust, Java, TypeScript và Python, sau hơn mười năm làm sản xuất trong ngành in.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block title %}Portfolio của Nguyên{% endblock %}</title>
@@ -15,19 +15,18 @@
 <body>
 
 <header>
-    <h1>Chào mừng đến với trang portfolio của tôi</h1>
+    <h1>Nguyên Nguyễn</h1>
 
+    {% set path = current_path | default(value="") %}
     <nav>
         <ul class="menu">
-            <li class="menu-li"><a href="{{ url_for('vi.about') }}">Giới thiệu</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.experience') }}">Kinh nghiệm</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.skill') }}">Kỹ năng</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.education') }}">Học vấn</a></li>
-            <li class="menu-li"><a href="{{ url_for('vi.project') }}">Dự án</a></li>
+            <li class="menu-li"><a href="/vi"{% if path == "/vi/" %} aria-current="page"{% endif %}>Giới thiệu</a></li>
+            <li class="menu-li"><a href="/vi/experience"{% if path == "/vi/experience/" %} aria-current="page"{% endif %}>Kinh nghiệm</a></li>
+            <li class="menu-li"><a href="/vi/skill"{% if path == "/vi/skill/" %} aria-current="page"{% endif %}>Kỹ năng</a></li>
+            <li class="menu-li"><a href="/vi/education"{% if path == "/vi/education/" %} aria-current="page"{% endif %}>Học vấn</a></li>
+            <li class="menu-li"><a href="/vi/project"{% if path == "/vi/project/" %} aria-current="page"{% endif %}>Dự án</a></li>
         </ul>
     </nav>
-
-    <div style="clear: both;"></div>
 
     <div class="preferences-bar">
         <!-- Theme selector -->
@@ -54,7 +53,7 @@
 </header>
 
 <main>
-    <p>Cập nhật lần cuối: 2026-07</p>
+    <p>Cập nhật lần cuối: {{ now() | date(format="%Y-%m") }}</p>
     {% block content %}
     {% endblock %}
 </main>

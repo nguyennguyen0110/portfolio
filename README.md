@@ -2,49 +2,40 @@
 
 
 ## Description
-This project is my personal portfolio page. Content is authored as Jinja
-templates and served as a pre-rendered **static site via nginx** (no Python at
-runtime). It is bilingual: English at `/` and Vietnamese under `/vi`.
+This project is my personal portfolio page. Content is authored as HTML
+templates and built into a **static site with [Zola](https://www.getzola.org)**
+(a single Rust binary), hosted on Firebase Hosting. It is bilingual: English at
+`/` and Vietnamese under `/vi`.
 
 
 ## How it works
-The templates in `templates/` are the single source of truth. At Docker build
-time, `build_static.py` renders every page to plain HTML in `dist/`, and nginx
-serves that with clean URLs and caching. There is no application server in
-production — Flask is used only as the build-time renderer.
+The templates in `templates/` are the single source of truth. `zola build`
+renders every page to plain HTML in `dist/` in a few milliseconds, and Firebase
+Hosting serves it with clean URLs and caching. There is no application server.
 
-To change content: edit the relevant template, commit, and push. The CI/CD
-pipeline rebuilds and redeploys automatically (see Project status).
+To change content: edit the relevant template, commit, and push. GitHub Actions
+rebuilds and redeploys automatically (see Project status).
 
 
 ## Local development
-Render the static site and preview it:
+Install Zola once (`brew install zola`), then:
 
-    python -m venv .venv
-    .venv/bin/pip install -r requirements.txt
-    .venv/bin/python build_static.py   # outputs ./dist
-
-Or build and run the exact production container locally:
-
-    docker build -t portfolio .
-    docker run -p 8088:8080 portfolio   # open http://localhost:8088
+    zola serve    # live preview at http://127.0.0.1:1111
+    zola build    # outputs ./dist
 
 
 ## Project structure
-- `templates/`: Jinja HTML templates (content). EN at top level, VI under
+- `config.toml`: Zola config — base URL, languages, output directory.
+- `content/`: one small stub per page that points at its template
+  (`experience.md` for EN, `experience.vi.md` for VI). To add a page, add a
+  stub and a template.
+- `templates/`: HTML templates (content). EN at top level, VI under
   `templates/vi/`. `base_en.html` / `vi/base_vi.html` are the layouts and both
   include `_head_scripts.html` (shared theme + JS + CSS head block).
-- `static/`: static assets — `css/style.css`, `js/main.js`, `image/`.
-- `app.py`: Flask app used by the build step to render templates (defines the
-  EN routes; registers the VI blueprint).
-- `route/vi.py`: Flask blueprint for the Vietnamese routes.
-- `build_static.py`: renders all routes to static HTML in `dist/` and copies
-  static assets. Run at Docker build time.
-- `nginx.conf`: nginx config — clean URLs, gzip, cache + security headers,
-  listens on `8080`.
-- `Dockerfile`: multi-stage build — stage 1 renders HTML with Flask, stage 2
-  serves it with nginx.
-- `requirements.txt`: build-time dependency (Flask).
+- `static/`: static assets, copied to the site root — `css/style.css`,
+  `js/main.js`, `image/`.
+- `firebase.json`: hosting config — clean URLs, cache + security headers.
+- `.github/workflows/deploy.yml`: builds with Zola and deploys on push to `main`.
 
 
 ## Support
@@ -61,8 +52,7 @@ This is just a personal project for portfolio page.
 
 ## Project status
 - Finished.
-- Current host: https://portfolio-698202522757.asia-southeast1.run.app
-- This project's source code is hosted on GitHub, with CI/CD handled by Cloud
-  Build and deployed via Cloud Run — both part of Google Cloud Platform (GCP).
-  Region: `asia-southeast1`, service: `portfolio`. A `git push` triggers the
-  build and deploy automatically; the Cloud Run URL stays the same.
+- Current host: https://nguyennta.io.vn
+- Source code is hosted on GitHub. A `git push` to `main` triggers GitHub
+  Actions, which builds the site with Zola and deploys it to Firebase Hosting
+  (GCP project `nguyennta-portfolio`).

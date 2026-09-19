@@ -1,0 +1,9 @@
+base_url = "https://nguyennta.io.vn"
+title = "Nguyen Nguyen"
+default_language = "en"
+output_dir = "dist"
+compile_sass = false
+build_search_index = false
+ignored_static = ["**/.DS_Store"]
+
+[languages.vi]

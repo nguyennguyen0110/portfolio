@@ -1,14 +1,46 @@
-.dark-mode {
-    background: black;
-    color: white;
+/* Palette shared with Romi (romi.io.vn): warm neutrals + burnt orange. */
+:root {
+    --bg: #f6f6f4;
+    --fg: #171717;
+    --muted: #666663;
+    --border: #dcdcd8;
+    --accent: #c2410c;
+    --accent-fg: #f4f4f2;
+    --link: #c2410c;
+    color-scheme: light;
+}
+
+:root.dark-mode {
+    --bg: #141413;
+    --fg: #f4f4f2;
+    --muted: #a3a39e;
+    --border: #3a3a37;
+    --link: #cf6a41;
+    color-scheme: dark;
+}
+
+html {
+    background: var(--bg);
+    color: var(--fg);
+    /* Stop iOS Safari from inflating text in landscape. */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 0 1rem 1rem;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-wrap: break-word;
 }
 
 footer {
     margin-top: 3em;
-    padding: 0.75em 1.5em;
+    padding: 0.75em 0;
     text-align: center;
     font-size: 0.85em;
-    color: gray;
+    color: var(--muted);
 }
 
 footer p {
@@ -16,8 +48,14 @@ footer p {
     margin: 0;
 }
 
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
 h1, h2 {
     text-align: center;
+    line-height: 1.25;
 }
 
 h3 {
@@ -29,12 +67,12 @@ p {
 }
 
 a {
-    text-decoration: none;
-    color: rgb(120, 150, 255);
+    color: var(--link);
+    text-underline-offset: 0.15em;
 }
 
-a:hover {
-    text-decoration: underline;
+ul {
+    padding-left: 1.5em;
 }
 
 li {
@@ -45,57 +83,92 @@ li {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    background: red;
-    height: auto;
     align-items: center;
+    gap: 0.25em;
+    margin: 0;
+    padding: 0.5em;
+    background: var(--accent);
+    border-radius: 0.75em;
 }
 
 .menu>li {
-    margin: 1em;
+    margin: 0;
 }
 
+/* Padding makes the whole pill area tappable on phones. */
 .menu-li>a {
+    display: block;
+    padding: 0.5em 0.8em;
+    border-radius: 999px;
     text-decoration: none;
-    color: white;
+    color: var(--accent-fg);
 }
 
 .menu-li>a:hover {
     text-decoration: underline;
 }
 
+/* Current page: a filled pill that inverts against the accent bar so the
+   selected tab is unambiguous. Baked in at build time via aria-current. */
+.menu-li>a[aria-current="page"] {
+    background: var(--accent-fg);
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .about-photo {
-  text-align: center;
-  margin-top: 3em;
+    text-align: center;
+    margin-top: 3em;
 }
 
 .about-photo>img {
-  max-width: 600px;
-  width: 100%;
-  border-radius: 1em;
-  box-shadow: 0 0 3em rgba(255, 200, 100, 0.3);
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 1em;
+    box-shadow: 0 0 3em rgba(255, 200, 100, 0.3);
 }
 
 .preferences-bar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; /* Theme left, Language right */
     align-items: center;
-    margin-top: 1.5rem;             /* relative unit instead of px */
-    width: 100%;
-    padding: 0 1.5rem;   /* add horizontal space from screen edge */
-    box-sizing: border-box;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
-/* Optional: spacing between label and select */
 .preferences-left,
 .preferences-right {
     display: flex;
     align-items: center;
-    gap: 0.5rem;                    /* relative-ish feel (depends on root font size) */
+    gap: 0.5rem;
+}
+
+/* 16px stops iOS Safari from zooming the page when a select is focused. */
+select {
+    font: inherit;
+    font-size: 16px;
 }
 
 /* Fixed width for language label so text changes don't shift layout */
 #language-label {
     display: inline-block;
-    width: 6rem;                    /* adjust as needed */
-    white-space: nowrap;            /* prevent wrapping */
+    width: 7rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 30rem) {
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        margin-top: 2em;
+    }
+
+    p {
+        text-indent: 1em;
+    }
 }

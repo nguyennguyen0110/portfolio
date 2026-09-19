@@ -5,19 +5,15 @@
 .DS_Store
 **/.DS_Store
 
-# Python virtual environment
+# Leftover from the Flask build; safe to delete locally
 .venv/
-venv/
-env/
-
-# Python cache
 __pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.egg-info/
+
+# Zola build output
 dist/
-build/
+
+# Firebase CLI cache
+.firebase/
 
 # Environment variables / secrets
 .env

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Nguyen Nguyen">
-    <meta name="description" content="Portfolio page">
+    <meta name="description" content="Nguyen Nguyen — software engineer in Dong Nai, Vietnam. Backend and full-stack development with Rust, Java, TypeScript, and Python, after ten years in print production.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block title %}Nguyen's Portfolio{% endblock %}</title>
@@ -15,19 +15,18 @@
 <body>
 
 <header>
-    <h1>Welcome to my portfolio page</h1>
+    <h1>Nguyen Nguyen</h1>
 
+    {% set path = current_path | default(value="") %}
     <nav>
         <ul class="menu">
-            <li class="menu-li"><a href="{{ url_for('about') }}">About</a></li>
-            <li class="menu-li"><a href="{{ url_for('experience') }}">Experience</a></li>
-            <li class="menu-li"><a href="{{ url_for('skill') }}">Skill</a></li>
-            <li class="menu-li"><a href="{{ url_for('education') }}">Education</a></li>
-            <li class="menu-li"><a href="{{ url_for('project') }}">Project</a></li>
+            <li class="menu-li"><a href="/"{% if path == "/" %} aria-current="page"{% endif %}>About</a></li>
+            <li class="menu-li"><a href="/experience"{% if path == "/experience/" %} aria-current="page"{% endif %}>Experience</a></li>
+            <li class="menu-li"><a href="/skill"{% if path == "/skill/" %} aria-current="page"{% endif %}>Skill</a></li>
+            <li class="menu-li"><a href="/education"{% if path == "/education/" %} aria-current="page"{% endif %}>Education</a></li>
+            <li class="menu-li"><a href="/project"{% if path == "/project/" %} aria-current="page"{% endif %}>Project</a></li>
         </ul>
     </nav>
-
-    <div style="clear: both;"></div>
 
     <div class="preferences-bar">
         <!-- Theme selector -->
@@ -54,7 +53,7 @@
 </header>
 
 <main>
-    <p>Last update: 2026-07</p>
+    <p>Last update: {{ now() | date(format="%Y-%m") }}</p>
     {% block content %}
     {% endblock %}
 </main>
