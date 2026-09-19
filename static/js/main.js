@@ -158,7 +158,9 @@ document.addEventListener("DOMContentLoaded", () => {
         languageSelect.addEventListener("change", () => {
             const targetLang = languageSelect.value;
             const url = new URL(window.location.href);
-            url.pathname = buildPathForLanguage(targetLang, url.pathname);
+            // A 404 path is bad in every language, so switch to that language's home
+            const basePath = document.getElementById("not-found") ? "/" : url.pathname;
+            url.pathname = buildPathForLanguage(targetLang, basePath);
             window.location.href = url.toString(); // preserves ?query and #hash
         });
     }

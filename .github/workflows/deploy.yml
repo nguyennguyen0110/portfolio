@@ -7,6 +7,11 @@ on:
 env:
   ZOLA_VERSION: 0.23.6
 
+# Newest push wins; a slow older run can't deploy last
+concurrency:
+  group: deploy-live
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
